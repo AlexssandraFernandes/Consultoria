@@ -78,26 +78,54 @@ header h1 {
   color:var(--text);
 }
 
-/* HERO */
 .hero {
-  text-align:center;
-  padding:50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.hero img {
-  width:180px;
-  margin-bottom:15px;
+/* TEXTO */
+.hero-text {
+  flex: 1;
+  min-width: 280px;
 }
 
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 24px;
-  background:var(--gold);
-  color:white;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:600;
+.hero-text h2 {
+  font-family: 'Cinzel';
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* IMAGEM */
+.hero-img img {
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 750px; /* controla o tamanho */
+  height: auto;
+  object-fit: contain;
+}
+
+/* RESPONSIVO (celular) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    max-width: 250px;
+  }
 }
 
 /* CONSULTORIA */
@@ -260,13 +288,20 @@ p {
 </header>
 
 <section class="hero">
-  <img src="aleeee.png" alt="Nutricionista">
-  <h2>Consultoria em Segurança Alimentar</h2>
-  <p>Adequação completa para empresas conforme normas da Vigilância Sanitária</p>
 
-  <a class="btn" href="https://wa.me/5586994352251?text=Olá!%20Vim%20pelo%20site%20e%20quero%20solicitar%20uma%20visita%20técnica%20para%20avaliação%20do%20meu%20estabelecimento." target="_blank">
-  Quero uma avaliação técnica no meu negócio
-</a>
+  <div class="hero-text">
+    <h2>Consultoria em Segurança Alimentar</h2>
+    <p>Adequação completa para empresas conforme normas da Vigilância Sanitária</p>
+
+    <a class="btn" href="https://wa.me/5586994352251" target="_blank">
+      Quero uma avaliação técnica no meu negócio
+    </a>
+  </div>
+
+  <div class="hero-img">
+    <img src="aleeee.png" alt="Nutricionista">
+  </div>
+
 </section>
 
 <section class="consultoria">
